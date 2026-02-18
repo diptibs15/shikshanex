@@ -227,13 +227,20 @@ const CoursesPage = () => {
                                   </div>
                                 )}
 
-                                {/* CTA Button */}
-                                <button
-                                  onClick={() => navigateToCourseDetail(course.title)}
-                                  className="w-full bg-primary text-primary-foreground py-2.5 rounded-lg font-medium text-sm hover:bg-primary/90 transition-colors"
-                                >
-                                  View Description
-                                </button>
+                                {/* CTA Buttons */}
+                                <div className="flex gap-3">
+                                  <button
+                                    onClick={() => navigateToCourseDetail(course.title)}
+                                    className="flex-1 border border-primary text-primary py-2.5 rounded-lg font-medium text-sm hover:bg-primary/5 transition-colors"
+                                  >
+                                    View Details
+                                  </button>
+                                  <Link to="/apply" className="flex-1">
+                                    <button className="w-full bg-primary text-primary-foreground py-2.5 rounded-lg font-medium text-sm hover:bg-primary/90 transition-colors">
+                                      Enroll Now
+                                    </button>
+                                  </Link>
+                                </div>
                               </div>
                             </div>
                           ))}
@@ -304,13 +311,20 @@ const CoursesPage = () => {
                               </div>
                             </div>
 
-                            {/* CTA Button */}
-                            <button
-                              onClick={() => navigateToCourseDetail(course.title)}
-                              className="w-full bg-primary text-primary-foreground py-2.5 rounded-lg font-medium text-sm hover:bg-primary/90 transition-colors"
-                            >
-                              View Description
-                            </button>
+                            {/* CTA Buttons */}
+                            <div className="flex gap-3">
+                              <button
+                                onClick={() => navigateToCourseDetail(course.title)}
+                                className="flex-1 border border-primary text-primary py-2.5 rounded-lg font-medium text-sm hover:bg-primary/5 transition-colors"
+                              >
+                                View Details
+                              </button>
+                              <Link to="/apply" className="flex-1">
+                                <button className="w-full bg-primary text-primary-foreground py-2.5 rounded-lg font-medium text-sm hover:bg-primary/90 transition-colors">
+                                  Enroll Now
+                                </button>
+                              </Link>
+                            </div>
                           </div>
                         </div>
                       ))}
