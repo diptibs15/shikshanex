@@ -4,7 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Clock, Users, Award, CheckCircle2, ArrowRight, PlayCircle, BookOpen } from "lucide-react";
+import { Clock, Users, Award, CheckCircle2, ArrowRight, PlayCircle, BookOpen, Briefcase, TrendingUp, Target } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import AICourseAdvisor from "@/components/courses/AICourseAdvisor";
 import { Badge } from "@/components/ui/badge";
@@ -122,7 +122,7 @@ const CoursesPage = () => {
                 Our Training Programs
               </h1>
               <p className="text-lg text-white/80">
-                Industry-oriented courses designed to make you job-ready. Choose from IT, HR, Digital Marketing, Graphic Design, and Nursing programs.
+                Industry-oriented courses designed to make you job-ready.
               </p>
             </div>
           </div>
@@ -155,7 +155,7 @@ const CoursesPage = () => {
                 
                 return (
                   <TabsContent key={key} value={key} className="mt-0">
-                    <div className="mb-8">
+                    <div className="mb-12">
                       <h2 className={`font-heading text-2xl md:text-3xl font-bold text-${category.color} mb-2`}>
                         {category.title}
                       </h2>
@@ -164,8 +164,8 @@ const CoursesPage = () => {
 
                     {/* Database Courses with Video Duration */}
                     {filteredDBCourses.length > 0 && (
-                      <div className="mb-12">
-                        <div className="flex items-center gap-2 mb-6">
+                      <div className="mb-16">
+                        <div className="flex items-center gap-2 mb-8">
                           <PlayCircle className="h-5 w-5 text-primary" />
                           <h3 className="font-heading text-xl font-semibold text-foreground">Available Now with Video Classes</h3>
                           <Badge variant="secondary">Live LMS</Badge>
@@ -174,85 +174,66 @@ const CoursesPage = () => {
                           {filteredDBCourses.map((course) => (
                             <div
                               key={course.id}
-                              className="bg-card rounded-xl border-2 border-primary/20 shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden"
+                              className="group bg-card rounded-2xl border shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300 overflow-hidden"
                             >
-                              <div className="p-6">
-                                <div className="flex items-start justify-between mb-3 gap-4">
-                                  <h3 className="font-heading text-lg font-semibold text-foreground">
+                              <div className="p-6 flex flex-col h-full">
+                                {/* Title and Price */}
+                                <div className="mb-4">
+                                  <h3 className="font-heading text-lg font-semibold text-foreground mb-2 line-clamp-2">
                                     {course.title}
                                   </h3>
-                                  <div className="flex-shrink-0">
-                                    <Badge className="bg-primary/10 text-primary text-xs">
-                                      ₹{course.price?.toLocaleString()}
-                                    </Badge>
-                                  </div>
+                                  <Badge className="bg-primary/10 text-primary text-xs font-medium">
+                                    ₹{course.price?.toLocaleString()}
+                                  </Badge>
                                 </div>
 
-                                <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
-                                  {course.description || "Comprehensive course designed to enhance your skills"}
+                                {/* Short Description */}
+                                <p className="text-sm text-muted-foreground mb-6 line-clamp-2 leading-relaxed">
+                                  {course.description || "Comprehensive training program"}
                                 </p>
 
-                                <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
-                                  <div className="flex items-center gap-1.5">
-                                    <Clock className="h-4 w-4" />
-                                    <span>{course.duration || "Flexible"}</span>
+                                {/* Key Highlights with Icons */}
+                                <div className="space-y-3 mb-6 flex-grow">
+                                  <div className="flex items-center gap-2 text-sm">
+                                    <Clock className="h-4 w-4 text-primary flex-shrink-0" />
+                                    <span className="text-foreground font-medium">{course.duration || "Flexible"}</span>
                                   </div>
-                                  {course.modules.length > 0 && (
-                                    <div className="flex items-center gap-1.5">
-                                      <PlayCircle className="h-4 w-4 text-primary" />
-                                      <span className="text-primary font-medium">
-                                        {course.modules.length} modules • {getTotalDuration(course.modules)}
-                                      </span>
-                                    </div>
-                                  )}
+                                  <div className="flex items-center gap-2 text-sm">
+                                    <Users className="h-4 w-4 text-primary flex-shrink-0" />
+                                    <span className="text-foreground font-medium">{course.modules.length > 0 ? `${course.modules.length} modules • ${getTotalDuration(course.modules)}` : "Self-paced"}</span>
+                                  </div>
+                                  <div className="flex items-center gap-2 text-sm">
+                                    <Award className="h-4 w-4 text-primary flex-shrink-0" />
+                                    <span className="text-foreground font-medium">Industry Certification</span>
+                                  </div>
                                 </div>
 
+                                {/* Tools as Tags */}
                                 {course.tools_covered && course.tools_covered.length > 0 && (
-                                  <div className="mb-4">
-                                    <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2">Tools Covered</div>
+                                  <div className="mb-6">
+                                    <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2">Skills</p>
                                     <div className="flex flex-wrap gap-2">
-                                      {course.tools_covered.slice(0, 4).map((tool) => (
-                                        <span key={tool} className={`px-2 py-1 text-xs rounded-md bg-${category.color}/10 text-${category.color}`}>
+                                      {course.tools_covered.slice(0, 3).map((tool) => (
+                                        <Badge key={tool} variant="outline" className="text-xs">
                                           {tool}
-                                        </span>
+                                        </Badge>
                                       ))}
-                                      {course.tools_covered.length > 4 && (
-                                        <span className="px-2 py-1 text-xs rounded-md bg-muted text-muted-foreground">
-                                          +{course.tools_covered.length - 4} more
-                                        </span>
+                                      {course.tools_covered.length > 3 && (
+                                        <Badge variant="outline" className="text-xs">
+                                          +{course.tools_covered.length - 3}
+                                        </Badge>
                                       )}
                                     </div>
                                   </div>
                                 )}
 
-                                <div className="space-y-2">
-                                  {course.has_internship && (
-                                    <div className="flex items-center gap-2 text-sm text-foreground">
-                                      <CheckCircle2 className={`h-4 w-4 text-${category.color}`} />
-                                      <span>Internship Included</span>
-                                    </div>
-                                  )}
-                                  {course.has_placement && (
-                                    <div className="flex items-center gap-2 text-sm text-foreground">
-                                      <CheckCircle2 className={`h-4 w-4 text-${category.color}`} />
-                                      <span>Placement Support</span>
-                                    </div>
-                                  )}
-                                </div>
-                              </div>
-
-                              <div className="px-6 py-4 bg-primary/5 border-t border-primary/20 flex items-center justify-between">
+                                {/* CTA Button */}
                                 <button
                                   onClick={() => navigateToCourseDetail(course.title)}
-                                  className="flex items-center gap-1.5 text-sm font-medium text-primary hover:underline cursor-pointer"
-                                  aria-label={`View description for ${course.title}`}
+                                  className="w-full bg-primary text-primary-foreground py-2.5 rounded-lg font-medium text-sm hover:bg-primary/90 transition-colors"
                                 >
-                                  <BookOpen className="h-4 w-4" />
-                                  <span>View Description</span>
+                                  View Description
                                 </button>
-                                <Link to="/apply" className="text-sm font-medium text-primary hover:underline flex items-center gap-1">
-                                  Enroll Now <ArrowRight className="h-3 w-3" />
-                                </Link>
                               </div>
                             </div>
                           ))}
@@ -260,62 +241,76 @@ const CoursesPage = () => {
                       </div>
                     )}
 
-                    {/* Static Course Cards */}
+                    {/* Static Course Cards - Redesigned */}
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                       {category.courses.map((course) => (
                         <div
                           key={course.title}
-                          className="bg-card rounded-xl border shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden"
+                          className="group bg-card rounded-2xl border shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300 overflow-hidden"
                         >
-                          <div className="p-6">
-                            <h3 className="font-heading text-lg font-semibold text-foreground mb-4">
+                          <div className="p-6 flex flex-col h-full">
+                            {/* Title */}
+                            <h3 className="font-heading text-lg font-semibold text-foreground mb-3 line-clamp-2">
                               {course.title}
                             </h3>
 
-                            <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
-                              <div className="flex items-center gap-1.5">
-                                <Clock className="h-4 w-4" />
-                                <span>{course.duration}</span>
+                            {/* Short Description - 2-3 lines only */}
+                            <p className="text-sm text-muted-foreground mb-6 line-clamp-3 leading-relaxed">
+                              {course.shortDesc}
+                            </p>
+
+                            {/* Key Highlights with Icons */}
+                            <div className="space-y-2 mb-6 flex-grow">
+                              <div className="flex items-center gap-2 text-sm">
+                                <Clock className="h-4 w-4 text-primary flex-shrink-0" />
+                                <span className="text-foreground font-medium">{course.duration}</span>
                               </div>
-                              <div className="flex items-center gap-1.5">
-                                <Users className="h-4 w-4" />
-                                <span>{course.students}</span>
+                              <div className="flex items-center gap-2 text-sm">
+                                <Users className="h-4 w-4 text-primary flex-shrink-0" />
+                                <span className="text-foreground font-medium">{course.students} students</span>
                               </div>
+                              {course.salaryPotential && (
+                                <div className="flex items-center gap-2 text-sm">
+                                  <TrendingUp className="h-4 w-4 text-success flex-shrink-0" />
+                                  <span className="text-foreground font-medium">{course.salaryPotential}</span>
+                                </div>
+                              )}
                             </div>
 
-                            <div className="mb-4">
-                              <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2">Tools Covered</div>
-                              <div className="flex flex-wrap gap-2">
-                                {course.tools.map((tool) => (
-                                  <span key={tool} className={`px-2 py-1 text-xs rounded-md bg-${category.color}/10 text-${category.color}`}>
-                                    {tool}
-                                  </span>
-                                ))}
-                              </div>
-                            </div>
-
-                            <div className="space-y-2">
-                              {course.features.map((feature) => (
-                                <div key={feature} className="flex items-center gap-2 text-sm text-foreground">
-                                  <CheckCircle2 className={`h-4 w-4 text-${category.color}`} />
-                                  <span>{feature}</span>
+                            {/* Features as Checkmarks */}
+                            <div className="space-y-1.5 mb-6">
+                              {course.features.slice(0, 3).map((feature) => (
+                                <div key={feature} className="flex items-center gap-2 text-xs">
+                                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0" />
+                                  <span className="text-foreground font-medium">{feature}</span>
                                 </div>
                               ))}
                             </div>
-                          </div>
 
-                          <div className="px-6 py-4 bg-muted/30 border-t flex items-center justify-between">
+                            {/* Tools as Tags */}
+                            <div className="mb-6">
+                              <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2">Tools</p>
+                              <div className="flex flex-wrap gap-2">
+                                {course.tools.slice(0, 3).map((tool) => (
+                                  <Badge key={tool} variant="outline" className="text-xs">
+                                    {tool}
+                                  </Badge>
+                                ))}
+                                {course.tools.length > 3 && (
+                                  <Badge variant="outline" className="text-xs">
+                                    +{course.tools.length - 3}
+                                  </Badge>
+                                )}
+                              </div>
+                            </div>
+
+                            {/* CTA Button */}
                             <button
                               onClick={() => navigateToCourseDetail(course.title)}
-                              className="flex items-center gap-1.5 text-sm font-medium text-primary hover:underline cursor-pointer"
-                              aria-label={`View description for ${course.title}`}
+                              className="w-full bg-primary text-primary-foreground py-2.5 rounded-lg font-medium text-sm hover:bg-primary/90 transition-colors"
                             >
-                              <BookOpen className="h-4 w-4" />
-                              <span>View Description</span>
+                              View Description
                             </button>
-                            <Link to="/apply" className="text-sm font-medium text-primary hover:underline flex items-center gap-1">
-                              Enroll Now <ArrowRight className="h-3 w-3" />
-                            </Link>
                           </div>
                         </div>
                       ))}
@@ -333,14 +328,17 @@ const CoursesPage = () => {
             <div className="grid lg:grid-cols-2 gap-8 items-start">
               <div>
                 <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">
-                  Not Sure Which Course to Choose?
+                  Need Course Guidance?
                 </h2>
-                <p className="text-muted-foreground mb-6">
-                  Let our AI-powered career advisor recommend the perfect courses based on your interests, qualifications, and career goals.
+                <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
+                  Get personalized recommendations based on your interests, skills, and career goals.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-3">
                   <a href="tel:+919876543210">
-                    <Button variant="outline" size="lg">Call Counselor</Button>
+                    <Button variant="outline" size="lg" className="gap-2">
+                      <Briefcase className="h-4 w-4" />
+                      Call Counselor
+                    </Button>
                   </a>
                 </div>
               </div>
