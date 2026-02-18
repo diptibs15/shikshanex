@@ -29,7 +29,14 @@ const courseCategories = {
         tools: ["Java", "Spring Boot", "React", "MySQL"],
         features: ["Live Projects", "Internship", "Placement"],
         shortDesc: "End-to-end training in Java-based full stack application development.",
-        aboutCourse: "This course covers core Java, Spring Boot, REST APIs, databases, and modern frontend technologies. Learners will build full stack web applications, understand backend architecture, API integration, and deployment practices used in enterprise environments."
+        aboutCourse: "This course covers core Java, Spring Boot, REST APIs, databases, and modern frontend technologies. Learners will build full stack web applications, understand backend architecture, API integration, and deployment practices used in enterprise environments.",
+        benefits: [
+          "Master enterprise-level Java development with Spring Boot framework",
+          "Build complete web applications from backend to frontend",
+          "Hands-on experience with REST APIs and database design",
+          "Work on live projects similar to industry standards",
+          "100% internship and placement assistance guaranteed"
+        ]
       },
       {
         title: "Python Full Stack with AI",
@@ -38,7 +45,14 @@ const courseCategories = {
         tools: ["Python", "Django", "React", "PostgreSQL"],
         features: ["Live Projects", "Internship", "Placement"],
         shortDesc: "Full stack development using Python and modern frameworks.",
-        aboutCourse: "This program includes Python fundamentals, Django/Flask, REST APIs, databases, and frontend integration. Learners will work on real-world projects and gain experience in building scalable web applications."
+        aboutCourse: "This program includes Python fundamentals, Django/Flask, REST APIs, databases, and frontend integration. Learners will work on real-world projects and gain experience in building scalable web applications.",
+        benefits: [
+          "Learn Python from basics to advanced web development",
+          "Master Django and Flask frameworks for rapid development",
+          "Build scalable and maintainable web applications",
+          "Integrate frontend and backend with modern tools",
+          "Job-ready skills with career support and placement"
+        ]
       },
       {
         title: "AI / Machine Learning with AI",
@@ -47,7 +61,14 @@ const courseCategories = {
         tools: ["Python", "TensorFlow", "Scikit-learn", "Pandas"],
         features: ["Research Projects", "Internship", "Placement"],
         shortDesc: "Introduction to artificial intelligence and machine learning.",
-        aboutCourse: "This course covers ML algorithms, model building, data preprocessing, and AI use cases. Learners will work on predictive models and real-world AI applications."
+        aboutCourse: "This course covers ML algorithms, model building, data preprocessing, and AI use cases. Learners will work on predictive models and real-world AI applications.",
+        benefits: [
+          "Understand core machine learning algorithms and their applications",
+          "Build predictive models using TensorFlow and Scikit-learn",
+          "Work with real datasets and perform data preprocessing",
+          "Develop AI solutions for real-world problems",
+          "Certification and placement support in AI/ML roles"
+        ]
       },
       {
         title: "Data Analytics with AI",
@@ -56,7 +77,14 @@ const courseCategories = {
         tools: ["Python", "SQL", "Tableau", "Power BI"],
         features: ["Case Studies", "Internship", "Placement"],
         shortDesc: "Practical data analysis and visualization program.",
-        aboutCourse: "Covers data cleaning, analysis, visualization, and reporting using tools like Excel, SQL, Python, and BI dashboards. Learners will analyze datasets and derive actionable insights for business decision-making."
+        aboutCourse: "Covers data cleaning, analysis, visualization, and reporting using tools like Excel, SQL, Python, and BI dashboards. Learners will analyze datasets and derive actionable insights for business decision-making.",
+        benefits: [
+          "Master data analysis and visualization tools (Tableau, Power BI)",
+          "Learn SQL for database querying and manipulation",
+          "Create compelling data dashboards for business insights",
+          "Analyze real-world datasets and derive actionable insights",
+          "Fast-track your career in data analytics with placement support"
+        ]
       },
       {
         title: "Data Science with AI",
@@ -65,7 +93,14 @@ const courseCategories = {
         tools: ["Python", "R", "ML", "Deep Learning"],
         features: ["Live Projects", "Internship", "Placement"],
         shortDesc: "Advanced data-driven problem-solving program.",
-        aboutCourse: "Includes statistics, Python, machine learning, data modeling, and analytics workflows. Learners will build end-to-end data science solutions for real-world scenarios."
+        aboutCourse: "Includes statistics, Python, machine learning, data modeling, and analytics workflows. Learners will build end-to-end data science solutions for real-world scenarios.",
+        benefits: [
+          "Comprehensive training in statistics and data science fundamentals",
+          "Master Python, R, and ML techniques for data science",
+          "Build end-to-end data science solutions from scratch",
+          "Work on research projects with real datasets",
+          "Access to industry mentors and 100% placement support"
+        ]
       },
       {
         title: "AWS & Cloud Computing with AI",
@@ -74,7 +109,14 @@ const courseCategories = {
         tools: ["AWS", "Azure", "Docker", "Kubernetes"],
         features: ["Certification Prep", "Internship", "Placement"],
         shortDesc: "Cloud computing concepts with hands-on AWS training.",
-        aboutCourse: "Covers cloud fundamentals, AWS services, deployment models, and cost optimization. Learners will gain practical experience in hosting applications and managing cloud infrastructure."
+        aboutCourse: "Covers cloud fundamentals, AWS services, deployment models, and cost optimization. Learners will gain practical experience in hosting applications and managing cloud infrastructure.",
+        benefits: [
+          "Get certified in AWS and other cloud platforms",
+          "Deploy and manage applications in cloud environments",
+          "Learn containerization with Docker and Kubernetes",
+          "Cost optimization and security best practices in cloud",
+          "High-demand skills with excellent job opportunities"
+        ]
       },
       {
         title: "Cyber Security with AI",
@@ -83,7 +125,14 @@ const courseCategories = {
         tools: ["Kali Linux", "Wireshark", "Metasploit"],
         features: ["Lab Practice", "Internship", "Placement"],
         shortDesc: "Fundamentals of information security and cyber defense.",
-        aboutCourse: "This course introduces network security, ethical hacking basics, risk management, and security best practices. Learners will understand threats, vulnerabilities, and protection mechanisms used in modern IT systems."
+        aboutCourse: "This course introduces network security, ethical hacking basics, risk management, and security best practices. Learners will understand threats, vulnerabilities, and protection mechanisms used in modern IT systems.",
+        benefits: [
+          "Learn ethical hacking and penetration testing techniques",
+          "Understand network security and defense mechanisms",
+          "Get hands-on experience with security tools and platforms",
+          "Prepare for industry security certifications",
+          "Secure your career with in-demand cybersecurity skills"
+        ]
       },
     ],
   },
@@ -99,7 +148,14 @@ const courseCategories = {
         tools: ["SAP HR", "Zoho People", "Excel"],
         features: ["Practical Training", "Internship", "Placement"],
         shortDesc: "Core HR operations and people management.",
-        aboutCourse: "Covers recruitment, onboarding, employee relations, performance management, and HR policies. Ideal for building a strong HR foundation."
+        aboutCourse: "Covers recruitment, onboarding, employee relations, performance management, and HR policies. Ideal for building a strong HR foundation.",
+        benefits: [
+          "Master end-to-end HR functions and processes",
+          "Learn using industry-standard HRMS platforms",
+          "Handle recruitment, onboarding, and employee relations",
+          "Understand labor laws and HR policies",
+          "Build a strong foundation for HR career growth"
+        ]
       },
       {
         title: "HR Recruiter (IT & Non-IT)",
@@ -108,7 +164,14 @@ const courseCategories = {
         tools: ["LinkedIn Recruiter", "ATS Systems", "Job Portals"],
         features: ["Mock Sessions", "Internship", "Placement"],
         shortDesc: "Recruitment strategies for IT and non-IT roles.",
-        aboutCourse: "Focuses on job analysis, sourcing, screening, interviewing, and offer management across technical and non-technical domains."
+        aboutCourse: "Focuses on job analysis, sourcing, screening, interviewing, and offer management across technical and non-technical domains.",
+        benefits: [
+          "Specialize in both IT and non-IT recruitment",
+          "Master modern sourcing and ATS systems",
+          "Develop expert interviewing and negotiation skills",
+          "Build talent networks and employer branding strategies",
+          "Quick placement in recruitment roles"
+        ]
       },
       {
         title: "Payroll & Statutory Compliance",
@@ -117,7 +180,14 @@ const courseCategories = {
         tools: ["Tally", "Payroll Software", "Excel"],
         features: ["Real Cases", "Internship", "Placement"],
         shortDesc: "Payroll processing and statutory compliance training.",
-        aboutCourse: "Covers salary structures, payroll systems, PF, ESI, labor laws, and compliance management used in organizations."
+        aboutCourse: "Covers salary structures, payroll systems, PF, ESI, labor laws, and compliance management used in organizations.",
+        benefits: [
+          "Master payroll processing and management",
+          "Understand statutory compliance and labor laws",
+          "Handle tax calculations and deductions accurately",
+          "Work with real payroll software and systems",
+          "Gain expertise in high-demand payroll administration"
+        ]
       },
       {
         title: "Talent Acquisition",
@@ -126,7 +196,14 @@ const courseCategories = {
         tools: ["Sourcing Tools", "Interview Techniques", "ATS"],
         features: ["Live Hiring", "Internship", "Placement"],
         shortDesc: "Specialized recruitment and hiring program.",
-        aboutCourse: "Focuses on sourcing strategies, interview techniques, employer branding, and recruitment analytics for effective talent acquisition."
+        aboutCourse: "Focuses on sourcing strategies, interview techniques, employer branding, and recruitment analytics for effective talent acquisition.",
+        benefits: [
+          "Develop advanced sourcing and candidate assessment skills",
+          "Master recruitment analytics and metrics",
+          "Build employer branding and talent pool strategies",
+          "Conduct effective interviews and candidate evaluations",
+          "Fast-track to talent acquisition specialist roles"
+        ]
       },
       {
         title: "HR Operations",
@@ -135,7 +212,14 @@ const courseCategories = {
         tools: ["HRMS", "Documentation", "Policies"],
         features: ["Practical Training", "Internship", "Placement"],
         shortDesc: "Operational HR processes and administration.",
-        aboutCourse: "Covers HR documentation, employee lifecycle management, HRMS usage, and internal coordination processes."
+        aboutCourse: "Covers HR documentation, employee lifecycle management, HRMS usage, and internal coordination processes.",
+        benefits: [
+          "Master HR operations and process management",
+          "Streamline employee lifecycle management",
+          "Learn HRMS implementation and usage",
+          "Handle HR documentation and compliance",
+          "Become an HR operations specialist"
+        ]
       },
     ],
   },
@@ -151,7 +235,14 @@ const courseCategories = {
         tools: ["Google Ads", "Meta Ads", "SEO Tools", "Analytics"],
         features: ["Live Campaigns", "Internship", "Placement"],
         shortDesc: "End-to-end digital marketing program.",
-        aboutCourse: "Covers SEO, social media, paid ads, content marketing, analytics, and campaign planning with hands-on projects."
+        aboutCourse: "Covers SEO, social media, paid ads, content marketing, analytics, and campaign planning with hands-on projects.",
+        benefits: [
+          "Master all digital marketing channels from SEO to paid ads",
+          "Run live campaigns and measure ROI using analytics",
+          "Develop marketing strategies for real clients",
+          "Get certified in Google Ads and Marketing platforms",
+          "Launch your career as a Digital Marketing Specialist"
+        ]
       },
       {
         title: "SEO Mastery",
@@ -160,7 +251,14 @@ const courseCategories = {
         tools: ["Ahrefs", "SEMrush", "Google Search Console"],
         features: ["Website Projects", "Internship", "Placement"],
         shortDesc: "Search engine optimization specialization.",
-        aboutCourse: "Focuses on keyword research, on-page and off-page SEO, technical SEO, and ranking strategies."
+        aboutCourse: "Focuses on keyword research, on-page and off-page SEO, technical SEO, and ranking strategies.",
+        benefits: [
+          "Master keyword research and SEO strategy",
+          "Implement on-page and technical SEO optimizations",
+          "Build authoritative backlinks and domain authority",
+          "Rank websites on first page of Google",
+          "Become an SEO expert with proven track record"
+        ]
       },
       {
         title: "Social Media Marketing",
@@ -169,7 +267,14 @@ const courseCategories = {
         tools: ["Meta Business", "Buffer", "Canva"],
         features: ["Brand Projects", "Internship", "Placement"],
         shortDesc: "Social media branding and engagement strategies.",
-        aboutCourse: "Covers content creation, platform algorithms, analytics, and paid promotions across major social platforms."
+        aboutCourse: "Covers content creation, platform algorithms, analytics, and paid promotions across major social platforms.",
+        benefits: [
+          "Create engaging content for all social platforms",
+          "Build and grow engaged online communities",
+          "Master social media advertising and promotions",
+          "Analyze metrics and optimize campaigns for better ROI",
+          "Become a Social Media Marketing Manager"
+        ]
       },
       {
         title: "Google Ads (PPC)",
@@ -178,7 +283,14 @@ const courseCategories = {
         tools: ["Google Ads", "Analytics", "Tag Manager"],
         features: ["Live Campaigns", "Certification", "Placement"],
         shortDesc: "Paid advertising and PPC campaign management.",
-        aboutCourse: "Covers search ads, display ads, keyword bidding, ad optimization, and performance tracking."
+        aboutCourse: "Covers search ads, display ads, keyword bidding, ad optimization, and performance tracking.",
+        benefits: [
+          "Master Google Ads and PPC campaign management",
+          "Learn bid strategies and optimization techniques",
+          "Track conversions and measure campaign ROI",
+          "Get Google Ads certification",
+          "Become a PPC specialist with high earning potential"
+        ]
       },
       {
         title: "Content Marketing",
@@ -187,7 +299,14 @@ const courseCategories = {
         tools: ["WordPress", "Copywriting", "Email Tools"],
         features: ["Portfolio Building", "Internship", "Placement"],
         shortDesc: "Content strategy and storytelling program.",
-        aboutCourse: "Focuses on content planning, copywriting, blogging, email marketing, and brand storytelling."
+        aboutCourse: "Focuses on content planning, copywriting, blogging, email marketing, and brand storytelling.",
+        benefits: [
+          "Master content strategy and brand storytelling",
+          "Create compelling copy that converts readers to customers",
+          "Build and manage successful blogs and websites",
+          "Execute email marketing campaigns effectively",
+          "Build a strong content marketing portfolio"
+        ]
       },
     ],
   },
@@ -203,7 +322,14 @@ const courseCategories = {
         tools: ["Photoshop", "Lightroom"],
         features: ["Project Work", "Portfolio", "Placement"],
         shortDesc: "Image editing and creative design.",
-        aboutCourse: "Focuses on photo editing, retouching, compositions, and digital artwork creation."
+        aboutCourse: "Focuses on photo editing, retouching, compositions, and digital artwork creation.",
+        benefits: [
+          "Master professional photo editing and retouching",
+          "Create stunning digital artwork and compositions",
+          "Work with professional photographers and creatives",
+          "Build a strong portfolio of design work",
+          "Launch a career as a Photo Editor or Digital Artist"
+        ]
       },
       {
         title: "Adobe Illustrator",
@@ -212,7 +338,14 @@ const courseCategories = {
         tools: ["Illustrator", "InDesign"],
         features: ["Vector Projects", "Portfolio", "Placement"],
         shortDesc: "Vector graphics and illustration design.",
-        aboutCourse: "Covers logo design, illustrations, typography, and branding assets creation."
+        aboutCourse: "Covers logo design, illustrations, typography, and branding assets creation.",
+        benefits: [
+          "Master vector graphics design and illustration",
+          "Create professional logos and branding assets",
+          "Work with typography and design principles",
+          "Design scalable graphics for all media",
+          "Become a sought-after Illustrator or Designer"
+        ]
       },
       {
         title: "UI/UX Design",
@@ -221,7 +354,14 @@ const courseCategories = {
         tools: ["Figma", "Adobe XD", "Sketch"],
         features: ["App Design", "Internship", "Placement"],
         shortDesc: "User interface and user experience design.",
-        aboutCourse: "Covers wireframing, prototyping, usability testing, and design thinking for digital products."
+        aboutCourse: "Covers wireframing, prototyping, usability testing, and design thinking for digital products.",
+        benefits: [
+          "Design user-friendly digital products and applications",
+          "Master wireframing, prototyping, and usability testing",
+          "Understand user research and design thinking",
+          "Work on real app and website design projects",
+          "High-demand UI/UX Designer with competitive salaries"
+        ]
       },
       {
         title: "Branding & Visual Design",
@@ -230,7 +370,14 @@ const courseCategories = {
         tools: ["Full Adobe Suite", "Brand Guidelines"],
         features: ["Brand Projects", "Portfolio", "Placement"],
         shortDesc: "Brand identity and visual communication.",
-        aboutCourse: "Focuses on brand strategy, visual systems, color theory, and consistent brand experiences."
+        aboutCourse: "Focuses on brand strategy, visual systems, color theory, and consistent brand experiences.",
+        benefits: [
+          "Develop comprehensive brand identities from scratch",
+          "Master color theory and visual design principles",
+          "Create brand guidelines and style systems",
+          "Design for multiple brand touchpoints",
+          "Become a specialist in brand and visual design"
+        ]
       },
       {
         title: "CorelDRAW",
@@ -239,7 +386,14 @@ const courseCategories = {
         tools: ["CorelDRAW", "Print Design"],
         features: ["Print Projects", "Portfolio", "Placement"],
         shortDesc: "Graphic design using CorelDRAW tools.",
-        aboutCourse: "Covers layout design, vector illustration, and print-ready designs."
+        aboutCourse: "Covers layout design, vector illustration, and print-ready designs.",
+        benefits: [
+          "Master CorelDRAW for professional design work",
+          "Create print-ready designs and layouts",
+          "Design for both digital and print media",
+          "Work on diverse design projects",
+          "Quick skill acquisition with immediate employment"
+        ]
       },
     ],
   },
