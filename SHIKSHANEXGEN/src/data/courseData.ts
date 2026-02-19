@@ -8,128 +8,218 @@ export const courseCategories = {
         title: "Java Full Stack with AI",
         duration: "6 Months",
         students: "500+",
-        tools: ["Java", "Spring Boot", "React", "MySQL", "REST API"],
+        rating: 4.8,
+        hours: 120,
+        lessons: 60,
+        level: "Beginner to Advanced",
+        price: 14999,
+        originalPrice: 29999,
+        badge: "50% OFF",
+        tools: ["Java", "Spring Boot", "React", "MySQL", "REST API", "Git"],
         features: ["Live Projects", "Internship", "100% Placement Support"],
-        shortDesc: "Build powerful full stack applications using Java and integrate modern AI features used in real-world systems.",
-        aboutCourse: "Master full stack development using Java and modern frontend technologies integrated with AI capabilities. This course is designed to make students industry-ready by combining backend development, frontend frameworks, database management, and AI-driven features used in real-world applications.",
-        benefits: [
-          "Build real-time full stack applications",
-          "Learn REST APIs and microservices architecture",
-          "Integrate AI features into web applications",
-          "Work on live industry projects",
-          "100% placement assistance",
-          "Resume building and interview preparation",
-          "Internship opportunities"
+        shortDesc: "Build powerful web applications using Java and integrate modern AI features.",
+        aboutCourse: "Learn frontend + backend development with AI integrations using real-world projects.",
+        keyHighlights: [
+          "Live Industry Projects",
+          "AI Integration Modules",
+          "Internship Support",
+          "100% Placement Assistance"
         ],
         careerOpportunities: [
           "Full Stack Developer",
           "Java Backend Developer",
-          "Software Engineer",
-          "AI-Integrated Application Developer"
+          "Software Engineer"
         ],
-        salaryPotential: "₹4–8 LPA"
+        salaryPotential: "₹4–8 LPA",
+        gradientFrom: "#7F00FF",
+        gradientVia: "#5B2B8F",
+        gradientTo: "#3F2B96",
       },
       {
         title: "Python Full Stack with AI",
         duration: "6 Months",
-        students: "450+",
-        tools: ["Python", "Django", "React", "PostgreSQL"],
+        students: "350+",
+        rating: 4.9,
+        hours: 120,
+        lessons: 65,
+        level: "Beginner to Advanced",
+        price: 14999,
+        originalPrice: 29999,
+        badge: "50% OFF",
+        tools: ["Python", "Django", "React", "PostgreSQL", "REST API"],
         features: ["Live Projects", "Internship", "100% Placement Support"],
-        shortDesc: "Build scalable web applications with Python, Django, and modern frameworks for rapid development.",
-        aboutCourse: "This program includes Python fundamentals, Django/Flask, REST APIs, databases, and frontend integration. Learners will work on real-world projects and gain experience in building scalable web applications.",
-        benefits: [
-          "Learn Python from basics to advanced web development",
-          "Master Django and Flask frameworks for rapid development",
-          "Build scalable and maintainable web applications",
-          "Integrate frontend and backend with modern tools",
-          "Job-ready skills with career support and placement"
+        shortDesc: "Develop intelligent web applications using Python and AI automation.",
+        aboutCourse: "Master Django, APIs, and AI-powered automation in real-time projects.",
+        keyHighlights: [
+          "Real-Time Projects",
+          "AI Automation Training",
+          "Internship Included",
+          "Placement Support"
         ],
-        salaryPotential: "₹3.5–7 LPA"
+        careerOpportunities: [
+          "Python Developer",
+          "Web Developer",
+          "AI Automation Engineer"
+        ],
+        salaryPotential: "₹3.5–7 LPA",
+        gradientFrom: "#2563EB",
+        gradientVia: "#1E40AF",
+        gradientTo: "#1E3A8A",
       },
       {
-        title: "AI / Machine Learning with AI",
+        title: "AI & Machine Learning with AI",
         duration: "4 Months",
-        students: "300+",
-        tools: ["Python", "TensorFlow", "Scikit-learn", "Pandas"],
+        students: "400+",
+        rating: 4.9,
+        hours: 100,
+        lessons: 55,
+        level: "Beginner to Advanced",
+        price: 16999,
+        originalPrice: 34999,
+        badge: "50% OFF",
+        tools: ["Python", "Pandas", "NumPy", "Scikit-learn", "TensorFlow"],
         features: ["Research Projects", "Internship", "100% Placement Support"],
-        shortDesc: "Master machine learning algorithms, model building, and AI solutions for real-world applications.",
-        aboutCourse: "This course covers ML algorithms, model building, data preprocessing, and AI use cases. Learners will work on predictive models and real-world AI applications.",
-        benefits: [
-          "Understand core machine learning algorithms and their applications",
-          "Build predictive models using TensorFlow and Scikit-learn",
-          "Work with real datasets and perform data preprocessing",
-          "Develop AI solutions for real-world problems",
-          "Certification and placement support in AI/ML roles"
+        shortDesc: "Build intelligent systems using machine learning and deep learning models.",
+        aboutCourse: "Learn algorithms, neural networks, and deploy AI models using real datasets.",
+        keyHighlights: [
+          "Hands-on Model Building",
+          "Real Dataset Projects",
+          "Portfolio Development",
+          "Placement Assistance"
         ],
-        salaryPotential: "₹5–10 LPA"
+        careerOpportunities: [
+          "Machine Learning Engineer",
+          "AI Developer",
+          "Data Scientist"
+        ],
+        salaryPotential: "₹5–10 LPA",
+        gradientFrom: "#DC2626",
+        gradientVia: "#991B1B",
+        gradientTo: "#7F1D1D",
       },
       {
-        title: "Data Analytics with AI",
+        title: "Data Analyst with AI",
         duration: "3 Months",
-        students: "400+",
-        tools: ["Python", "SQL", "Tableau", "Power BI"],
+        students: "280+",
+        rating: 4.8,
+        hours: 90,
+        lessons: 50,
+        level: "Beginner Friendly",
+        price: 13999,
+        originalPrice: 27999,
+        badge: "50% OFF",
+        tools: ["Excel", "SQL", "Python", "Power BI", "Tableau"],
         features: ["Case Studies", "Internship", "100% Placement Support"],
-        shortDesc: "Transform raw data into actionable insights using analytics tools and visualization dashboards.",
-        aboutCourse: "Covers data cleaning, analysis, visualization, and reporting using tools like Excel, SQL, Python, and BI dashboards. Learners will analyze datasets and derive actionable insights for business decision-making.",
-        benefits: [
-          "Master data analysis and visualization tools (Tableau, Power BI)",
-          "Learn SQL for database querying and manipulation",
-          "Create compelling data dashboards for business insights",
-          "Analyze real-world datasets and derive actionable insights",
-          "Fast-track your career in data analytics with placement support"
+        shortDesc: "Analyze business data and generate insights using AI-powered tools.",
+        aboutCourse: "Master data visualization, dashboards, and analytics for business growth.",
+        keyHighlights: [
+          "Business Case Studies",
+          "Dashboard Projects",
+          "Excel to Power BI",
+          "Placement Support"
         ],
-        salaryPotential: "₹3–6 LPA"
+        careerOpportunities: [
+          "Data Analyst",
+          "Business Analyst",
+          "BI Developer"
+        ],
+        salaryPotential: "₹3–6 LPA",
+        gradientFrom: "#059669",
+        gradientVia: "#047857",
+        gradientTo: "#065F46",
       },
       {
         title: "Data Science with AI",
         duration: "5 Months",
-        students: "350+",
-        tools: ["Python", "R", "ML", "Deep Learning"],
+        students: "320+",
+        rating: 4.9,
+        hours: 120,
+        lessons: 70,
+        level: "Intermediate Level",
+        price: 17999,
+        originalPrice: 35999,
+        badge: "50% OFF",
+        tools: ["Python", "Pandas", "NumPy", "Scikit-learn", "TensorFlow", "SQL"],
         features: ["Live Projects", "Internship", "100% Placement Support"],
-        shortDesc: "Build end-to-end data science solutions combining statistics, ML, and deep learning techniques.",
-        aboutCourse: "Includes statistics, Python, machine learning, data modeling, and analytics workflows. Learners will build end-to-end data science solutions for real-world scenarios.",
-        benefits: [
-          "Comprehensive training in statistics and data science fundamentals",
-          "Master Python, R, and ML techniques for data science",
-          "Build end-to-end data science solutions from scratch",
-          "Work on research projects with real datasets",
-          "Access to industry mentors and 100% placement support"
+        shortDesc: "Become job-ready with advanced analytics and predictive modeling skills.",
+        aboutCourse: "Learn statistics, ML models, and AI deployment techniques.",
+        keyHighlights: [
+          "Capstone Projects",
+          "Real Dataset Training",
+          "Portfolio Building",
+          "Interview Preparation"
         ],
-        salaryPotential: "₹6–12 LPA"
+        careerOpportunities: [
+          "Data Scientist",
+          "ML Engineer",
+          "AI Specialist"
+        ],
+        salaryPotential: "₹6–12 LPA",
+        gradientFrom: "#7C3AED",
+        gradientVia: "#6D28D9",
+        gradientTo: "#5B21B6",
       },
       {
         title: "AWS & Cloud Computing with AI",
         duration: "3 Months",
-        students: "350+",
-        tools: ["AWS", "Azure", "Docker", "Kubernetes"],
+        students: "260+",
+        rating: 4.8,
+        hours: 100,
+        lessons: 55,
+        level: "Beginner to Advanced",
+        price: 15999,
+        originalPrice: 31999,
+        badge: "50% OFF",
+        tools: ["AWS EC2", "S3", "Lambda", "Docker", "Kubernetes"],
         features: ["Certification Prep", "Internship", "100% Placement Support"],
-        shortDesc: "Master cloud infrastructure deployment, containerization, and AWS services with hands-on projects.",
-        aboutCourse: "Covers cloud fundamentals, AWS services, deployment models, and cost optimization. Learners will gain practical experience in hosting applications and managing cloud infrastructure.",
-        benefits: [
-          "Get certified in AWS and other cloud platforms",
-          "Deploy and manage applications in cloud environments",
-          "Learn containerization with Docker and Kubernetes",
-          "Cost optimization and security best practices in cloud",
-          "High-demand skills with excellent job opportunities"
+        shortDesc: "Deploy scalable cloud and AI-powered applications using AWS services.",
+        aboutCourse: "Learn cloud architecture, DevOps basics, and AI service deployment.",
+        keyHighlights: [
+          "AWS Hands-on Labs",
+          "Cloud Deployment Projects",
+          "AI Cloud Integration",
+          "Certification Guidance"
         ],
-        salaryPotential: "₹4–9 LPA"
+        careerOpportunities: [
+          "Cloud Engineer",
+          "DevOps Engineer",
+          "AWS Architect"
+        ],
+        salaryPotential: "₹4–9 LPA",
+        gradientFrom: "#EA580C",
+        gradientVia: "#C2410C",
+        gradientTo: "#92400E",
       },
       {
         title: "Cyber Security with AI",
         duration: "4 Months",
-        students: "250+",
-        tools: ["Kali Linux", "Wireshark", "Metasploit"],
+        students: "300+",
+        rating: 4.8,
+        hours: 110,
+        lessons: 60,
+        level: "Beginner to Advanced",
+        price: 15999,
+        originalPrice: 31999,
+        badge: "50% OFF",
+        tools: ["Kali Linux", "Wireshark", "Metasploit", "Python"],
         features: ["Lab Practice", "Internship", "100% Placement Support"],
-        shortDesc: "Learn ethical hacking, network security, and cyber defense strategies with hands-on lab practice.",
-        aboutCourse: "This course introduces network security, ethical hacking basics, risk management, and security best practices. Learners will understand threats, vulnerabilities, and protection mechanisms used in modern IT systems.",
-        benefits: [
-          "Learn ethical hacking and penetration testing techniques",
-          "Understand network security and defense mechanisms",
-          "Get hands-on experience with security tools and platforms",
-          "Prepare for industry security certifications",
-          "Secure your career with in-demand cybersecurity skills"
+        shortDesc: "Protect systems using ethical hacking and AI-driven threat detection.",
+        aboutCourse: "Learn penetration testing, network security, and AI-based security tools.",
+        keyHighlights: [
+          "Ethical Hacking Labs",
+          "Security Simulations",
+          "Internship Support",
+          "Placement Assistance"
         ],
-        salaryPotential: "₹5–11 LPA"
+        careerOpportunities: [
+          "Cyber Security Analyst",
+          "Ethical Hacker",
+          "Security Engineer"
+        ],
+        salaryPotential: "₹5–11 LPA",
+        gradientFrom: "#DC2626",
+        gradientVia: "#B91C1C",
+        gradientTo: "#7F1D1D",
       },
     ],
   },
@@ -142,86 +232,63 @@ export const courseCategories = {
         title: "HR Generalist",
         duration: "3 Months",
         students: "300+",
+        rating: 4.7,
+        hours: 80,
+        lessons: 45,
+        level: "Beginner to Intermediate",
+        price: 12999,
+        originalPrice: 25999,
+        badge: "50% OFF",
         tools: ["SAP HR", "Zoho People", "Excel"],
         features: ["Practical Training", "Internship", "100% Placement Support"],
         shortDesc: "Master end-to-end HR operations, recruitment, and employee management functions.",
-        aboutCourse: "Covers recruitment, onboarding, employee relations, performance management, and HR policies. Ideal for building a strong HR foundation.",
-        benefits: [
-          "Master end-to-end HR functions and processes",
-          "Learn using industry-standard HRMS platforms",
-          "Handle recruitment, onboarding, and employee relations",
-          "Understand labor laws and HR policies",
-          "Build a strong foundation for HR career growth"
+        aboutCourse: "Covers recruitment, onboarding, employee relations, and HR policies.",
+        keyHighlights: [
+          "End-to-End HR Functions",
+          "HRMS Platform Training",
+          "Employee Relations Skills",
+          "Placement Support"
         ],
-        salaryPotential: "₹2.5–5 LPA"
+        careerOpportunities: [
+          "HR Generalist",
+          "HR Executive",
+          "HR Coordinator"
+        ],
+        salaryPotential: "₹2.5–5 LPA",
+        gradientFrom: "#0891B2",
+        gradientVia: "#0E7490",
+        gradientTo: "#155E75",
       },
       {
         title: "HR Recruiter (IT & Non-IT)",
         duration: "2 Months",
         students: "400+",
+        rating: 4.8,
+        hours: 60,
+        lessons: 35,
+        level: "Beginner to Intermediate",
+        price: 11999,
+        originalPrice: 23999,
+        badge: "50% OFF",
         tools: ["LinkedIn Recruiter", "ATS Systems", "Job Portals"],
         features: ["Mock Sessions", "Internship", "100% Placement Support"],
-        shortDesc: "Specialize in recruitment for both IT and non-IT roles with modern sourcing and ATS systems.",
-        aboutCourse: "Focuses on job analysis, sourcing, screening, interviewing, and offer management across technical and non-technical domains.",
-        benefits: [
-          "Specialize in both IT and non-IT recruitment",
-          "Master modern sourcing and ATS systems",
-          "Develop expert interviewing and negotiation skills",
-          "Build talent networks and employer branding strategies",
-          "Quick placement in recruitment roles"
+        shortDesc: "Specialize in recruitment for both IT and non-IT roles with modern sourcing.",
+        aboutCourse: "Master job analysis, sourcing, screening, interviewing, and offer management.",
+        keyHighlights: [
+          "IT & Non-IT Recruitment",
+          "Modern Sourcing Techniques",
+          "Interview & Negotiation",
+          "ATS System Training"
         ],
-        salaryPotential: "₹2–4.5 LPA"
-      },
-      {
-        title: "Payroll & Statutory Compliance",
-        duration: "2 Months",
-        students: "200+",
-        tools: ["Tally", "Payroll Software", "Excel"],
-        features: ["Real Cases", "Internship", "100% Placement Support"],
-        shortDesc: "Learn payroll processing, tax management, and statutory compliance using industry software.",
-        aboutCourse: "Covers salary structures, payroll systems, PF, ESI, labor laws, and compliance management used in organizations.",
-        benefits: [
-          "Master payroll processing and management",
-          "Understand statutory compliance and labor laws",
-          "Handle tax calculations and deductions accurately",
-          "Work with real payroll software and systems",
-          "Gain expertise in high-demand payroll administration"
+        careerOpportunities: [
+          "HR Recruiter",
+          "Talent Acquisition Specialist",
+          "Recruitment Coordinator"
         ],
-        salaryPotential: "₹2–4 LPA"
-      },
-      {
-        title: "Talent Acquisition",
-        duration: "2 Months",
-        students: "250+",
-        tools: ["Sourcing Tools", "Interview Techniques", "ATS"],
-        features: ["Live Hiring", "Internship", "100% Placement Support"],
-        shortDesc: "Master advanced recruitment strategies, sourcing, and candidate assessment techniques.",
-        aboutCourse: "Focuses on sourcing strategies, interview techniques, employer branding, and recruitment analytics for effective talent acquisition.",
-        benefits: [
-          "Develop advanced sourcing and candidate assessment skills",
-          "Master recruitment analytics and metrics",
-          "Build employer branding and talent pool strategies",
-          "Conduct effective interviews and candidate evaluations",
-          "Fast-track to talent acquisition specialist roles"
-        ],
-        salaryPotential: "₹2.5–5 LPA"
-      },
-      {
-        title: "HR Operations",
-        duration: "2 Months",
-        students: "180+",
-        tools: ["HRMS", "Documentation", "Policies"],
-        features: ["Practical Training", "Internship", "100% Placement Support"],
-        shortDesc: "Master HR processes, HRMS systems, and employee lifecycle management operations.",
-        aboutCourse: "Covers HR documentation, employee lifecycle management, HRMS usage, and internal coordination processes.",
-        benefits: [
-          "Master HR operations and process management",
-          "Streamline employee lifecycle management",
-          "Learn HRMS implementation and usage",
-          "Handle HR documentation and compliance",
-          "Become an HR operations specialist"
-        ],
-        salaryPotential: "₹2–3.5 LPA"
+        salaryPotential: "₹2–4.5 LPA",
+        gradientFrom: "#0EA5E9",
+        gradientVia: "#0284C7",
+        gradientTo: "#0369A1",
       },
     ],
   },
@@ -234,86 +301,63 @@ export const courseCategories = {
         title: "Complete Digital Marketing",
         duration: "4 Months",
         students: "500+",
+        rating: 4.8,
+        hours: 100,
+        lessons: 55,
+        level: "Beginner to Advanced",
+        price: 13999,
+        originalPrice: 27999,
+        badge: "50% OFF",
         tools: ["Google Ads", "Meta Ads", "SEO Tools", "Analytics"],
         features: ["Live Campaigns", "Internship", "100% Placement Support"],
-        shortDesc: "Master all digital marketing channels from SEO to paid ads with hands-on live campaigns.",
-        aboutCourse: "Covers SEO, social media, paid ads, content marketing, analytics, and campaign planning with hands-on projects.",
-        benefits: [
-          "Master all digital marketing channels from SEO to paid ads",
-          "Run live campaigns and measure ROI using analytics",
-          "Develop marketing strategies for real clients",
-          "Get certified in Google Ads and Marketing platforms",
-          "Launch your career as a Digital Marketing Specialist"
+        shortDesc: "Master all digital marketing channels from SEO to paid ads with hands-on projects.",
+        aboutCourse: "Master SEO, social media, paid ads, content marketing, and analytics.",
+        keyHighlights: [
+          "All Marketing Channels",
+          "Live Campaign Management",
+          "Google Ads Certification",
+          "Analytics Expertise"
         ],
-        salaryPotential: "₹3–6 LPA"
+        careerOpportunities: [
+          "Digital Marketing Manager",
+          "Marketing Specialist",
+          "Campaign Manager"
+        ],
+        salaryPotential: "₹3–6 LPA",
+        gradientFrom: "#EC4899",
+        gradientVia: "#DB2777",
+        gradientTo: "#BE185D",
       },
       {
         title: "SEO Mastery",
         duration: "2 Months",
         students: "350+",
+        rating: 4.7,
+        hours: 60,
+        lessons: 35,
+        level: "Intermediate",
+        price: 11999,
+        originalPrice: 23999,
+        badge: "50% OFF",
         tools: ["Ahrefs", "SEMrush", "Google Search Console"],
         features: ["Website Projects", "Internship", "100% Placement Support"],
-        shortDesc: "Master keyword research, on-page SEO, technical optimization, and ranking strategies.",
-        aboutCourse: "Focuses on keyword research, on-page and off-page SEO, technical SEO, and ranking strategies.",
-        benefits: [
-          "Master keyword research and SEO strategy",
-          "Implement on-page and technical SEO optimizations",
-          "Build authoritative backlinks and domain authority",
-          "Rank websites on first page of Google",
-          "Become an SEO expert with proven track record"
+        shortDesc: "Master keyword research, on-page SEO, technical optimization, and ranking.",
+        aboutCourse: "Learn keyword research, on-page/off-page SEO, and ranking strategies.",
+        keyHighlights: [
+          "Keyword Research Mastery",
+          "On-Page Optimization",
+          "Technical SEO",
+          "Ranking Strategies"
         ],
-        salaryPotential: "₹2.5–5 LPA"
-      },
-      {
-        title: "Social Media Marketing",
-        duration: "2 Months",
-        students: "400+",
-        tools: ["Meta Business", "Buffer", "Canva"],
-        features: ["Brand Projects", "Internship", "100% Placement Support"],
-        shortDesc: "Create engaging content and manage social media advertising across all major platforms.",
-        aboutCourse: "Covers content creation, platform algorithms, analytics, and paid promotions across major social platforms.",
-        benefits: [
-          "Create engaging content for all social platforms",
-          "Build and grow engaged online communities",
-          "Master social media advertising and promotions",
-          "Analyze metrics and optimize campaigns for better ROI",
-          "Become a Social Media Marketing Manager"
+        careerOpportunities: [
+          "SEO Specialist",
+          "SEO Expert",
+          "Marketing Analyst"
         ],
-        salaryPotential: "₹2.5–5 LPA"
-      },
-      {
-        title: "Google Ads (PPC)",
-        duration: "1 Month",
-        students: "300+",
-        tools: ["Google Ads", "Analytics", "Tag Manager"],
-        features: ["Live Campaigns", "Certification", "100% Placement Support"],
-        shortDesc: "Master PPC campaign management and Google Ads with bid optimization and ROI tracking.",
-        aboutCourse: "Covers search ads, display ads, keyword bidding, ad optimization, and performance tracking.",
-        benefits: [
-          "Master Google Ads and PPC campaign management",
-          "Learn bid strategies and optimization techniques",
-          "Track conversions and measure campaign ROI",
-          "Get Google Ads certification",
-          "Become a PPC specialist with high earning potential"
-        ],
-        salaryPotential: "₹3–6 LPA"
-      },
-      {
-        title: "Content Marketing",
-        duration: "2 Months",
-        students: "200+",
-        tools: ["WordPress", "Copywriting", "Email Tools"],
-        features: ["Portfolio Building", "Internship", "100% Placement Support"],
-        shortDesc: "Master content strategy, copywriting, and storytelling to create compelling marketing content.",
-        aboutCourse: "Focuses on content planning, copywriting, blogging, email marketing, and brand storytelling.",
-        benefits: [
-          "Master content strategy and brand storytelling",
-          "Create compelling copy that converts readers to customers",
-          "Build and manage successful blogs and websites",
-          "Execute email marketing campaigns effectively",
-          "Build a strong content marketing portfolio"
-        ],
-        salaryPotential: "₹2–4 LPA"
+        salaryPotential: "₹2.5–5 LPA",
+        gradientFrom: "#F59E0B",
+        gradientVia: "#D97706",
+        gradientTo: "#B45309",
       },
     ],
   },
@@ -326,86 +370,63 @@ export const courseCategories = {
         title: "Adobe Photoshop",
         duration: "2 Months",
         students: "400+",
+        rating: 4.8,
+        hours: 50,
+        lessons: 40,
+        level: "Beginner to Intermediate",
+        price: 9999,
+        originalPrice: 19999,
+        badge: "50% OFF",
         tools: ["Photoshop", "Lightroom"],
         features: ["Project Work", "Portfolio", "100% Placement Support"],
-        shortDesc: "Master professional photo editing, retouching, and digital artwork creation skills.",
-        aboutCourse: "Focuses on photo editing, retouching, compositions, and digital artwork creation.",
-        benefits: [
-          "Master professional photo editing and retouching",
-          "Create stunning digital artwork and compositions",
-          "Work with professional photographers and creatives",
-          "Build a strong portfolio of design work",
-          "Launch a career as a Photo Editor or Digital Artist"
+        shortDesc: "Master professional photo editing, retouching, and digital artwork creation.",
+        aboutCourse: "Master photo editing, retouching, and digital artwork creation.",
+        keyHighlights: [
+          "Photo Editing & Retouching",
+          "Digital Artwork Creation",
+          "Professional Techniques",
+          "Portfolio Building"
         ],
-        salaryPotential: "₹2–4 LPA"
-      },
-      {
-        title: "Adobe Illustrator",
-        duration: "2 Months",
-        students: "350+",
-        tools: ["Illustrator", "InDesign"],
-        features: ["Vector Projects", "Portfolio", "100% Placement Support"],
-        shortDesc: "Create professional vector graphics, logos, and branding assets using Adobe Illustrator.",
-        aboutCourse: "Covers logo design, illustrations, typography, and branding assets creation.",
-        benefits: [
-          "Master vector graphics design and illustration",
-          "Create professional logos and branding assets",
-          "Work with typography and design principles",
-          "Design scalable graphics for all media",
-          "Become a sought-after Illustrator or Designer"
+        careerOpportunities: [
+          "Photo Editor",
+          "Digital Artist",
+          "Graphic Designer"
         ],
-        salaryPotential: "₹2.5–5 LPA"
+        salaryPotential: "₹2–4 LPA",
+        gradientFrom: "#06B6D4",
+        gradientVia: "#0891B2",
+        gradientTo: "#0E7490",
       },
       {
         title: "UI/UX Design",
         duration: "3 Months",
         students: "250+",
+        rating: 4.9,
+        hours: 80,
+        lessons: 50,
+        level: "Beginner to Intermediate",
+        price: 14999,
+        originalPrice: 29999,
+        badge: "50% OFF",
         tools: ["Figma", "Adobe XD", "Sketch"],
         features: ["App Design", "Internship", "100% Placement Support"],
-        shortDesc: "Design user-friendly digital products through wireframing, prototyping, and usability testing.",
-        aboutCourse: "Covers wireframing, prototyping, usability testing, and design thinking for digital products.",
-        benefits: [
-          "Design user-friendly digital products and applications",
-          "Master wireframing, prototyping, and usability testing",
-          "Understand user research and design thinking",
-          "Work on real app and website design projects",
-          "High-demand UI/UX Designer with competitive salaries"
+        shortDesc: "Design user-friendly digital products through wireframing and prototyping.",
+        aboutCourse: "Master wireframing, prototyping, usability testing, and design thinking.",
+        keyHighlights: [
+          "Wireframing & Prototyping",
+          "Usability Testing",
+          "Design Thinking",
+          "Real App Projects"
         ],
-        salaryPotential: "₹3–7 LPA"
-      },
-      {
-        title: "Branding & Visual Design",
-        duration: "2 Months",
-        students: "200+",
-        tools: ["Full Adobe Suite", "Brand Guidelines"],
-        features: ["Brand Projects", "Portfolio", "100% Placement Support"],
-        shortDesc: "Develop comprehensive brand identities and visual systems using design principles.",
-        aboutCourse: "Focuses on brand strategy, visual systems, color theory, and consistent brand experiences.",
-        benefits: [
-          "Develop comprehensive brand identities from scratch",
-          "Master color theory and visual design principles",
-          "Create brand guidelines and style systems",
-          "Design for multiple brand touchpoints",
-          "Become a specialist in brand and visual design"
+        careerOpportunities: [
+          "UI/UX Designer",
+          "Product Designer",
+          "Design Lead"
         ],
-        salaryPotential: "₹2.5–5 LPA"
-      },
-      {
-        title: "CorelDRAW",
-        duration: "1 Month",
-        students: "150+",
-        tools: ["CorelDRAW", "Print Design"],
-        features: ["Print Projects", "Portfolio", "100% Placement Support"],
-        shortDesc: "Master CorelDRAW for professional graphic design and print-ready layouts.",
-        aboutCourse: "Covers layout design, vector illustration, and print-ready designs.",
-        benefits: [
-          "Master CorelDRAW for professional design work",
-          "Create print-ready designs and layouts",
-          "Design for both digital and print media",
-          "Work on diverse design projects",
-          "Quick skill acquisition with immediate employment"
-        ],
-        salaryPotential: "₹1.5–3 LPA"
+        salaryPotential: "₹3–7 LPA",
+        gradientFrom: "#8B5CF6",
+        gradientVia: "#7C3AED",
+        gradientTo: "#6D28D9",
       },
     ],
   },
@@ -418,69 +439,63 @@ export const courseCategories = {
         title: "Advanced Clinical Training",
         duration: "6 Months",
         students: "300+",
+        rating: 4.8,
+        hours: 120,
+        lessons: 50,
+        level: "Intermediate to Advanced",
+        price: 18999,
+        originalPrice: 37999,
+        badge: "50% OFF",
         tools: ["Clinical Equipment", "Patient Care", "Documentation"],
         features: ["Hospital Training", "Internship", "100% Placement Support"],
-        shortDesc: "Master advanced nursing procedures and clinical best practices in real hospital settings.",
-        aboutCourse: "Focuses on advanced nursing procedures, patient care protocols, and clinical best practices.",
-        benefits: [
-          "Master advanced clinical nursing procedures and techniques",
-          "Train under experienced healthcare professionals",
-          "Gain hands-on experience in real hospital settings",
-          "Learn evidence-based patient care protocols",
-          "Develop expertise required for senior nursing roles"
+        shortDesc: "Master advanced nursing procedures and clinical best practices.",
+        aboutCourse: "Master advanced nursing procedures and clinical best practices.",
+        keyHighlights: [
+          "Advanced Procedures",
+          "Hospital Training",
+          "Patient Care Protocols",
+          "Evidence-Based Practice"
         ],
-        salaryPotential: "₹3–6 LPA"
+        careerOpportunities: [
+          "Senior Nurse",
+          "Clinical Lead",
+          "Nurse Specialist"
+        ],
+        salaryPotential: "₹3–6 LPA",
+        gradientFrom: "#EF4444",
+        gradientVia: "#DC2626",
+        gradientTo: "#991B1B",
       },
       {
         title: "ICU & Emergency Care",
         duration: "3 Months",
         students: "250+",
+        rating: 4.8,
+        hours: 80,
+        lessons: 40,
+        level: "Intermediate",
+        price: 16999,
+        originalPrice: 33999,
+        badge: "50% OFF",
         tools: ["ICU Equipment", "Emergency Protocols", "Life Support"],
         features: ["Hands-on Training", "Internship", "100% Placement Support"],
-        shortDesc: "Specialize in critical care and emergency nursing with hands-on hospital experience.",
-        aboutCourse: "Covers ICU protocols, emergency handling, life-support systems, and patient monitoring.",
-        benefits: [
-          "Specialize in critical care and emergency nursing",
-          "Master life-support systems and monitoring equipment",
-          "Handle medical emergencies with confidence",
-          "Work in high-demand ICU and emergency departments",
-          "Earn higher salaries in specialized nursing roles"
+        shortDesc: "Specialize in critical care and emergency nursing.",
+        aboutCourse: "Master ICU protocols, emergency handling, and life-support systems.",
+        keyHighlights: [
+          "ICU Specialization",
+          "Emergency Protocols",
+          "Life Support Systems",
+          "Patient Monitoring"
         ],
-        salaryPotential: "₹3.5–7 LPA"
-      },
-      {
-        title: "Patient Care & Documentation",
-        duration: "2 Months",
-        students: "400+",
-        tools: ["EHR Systems", "Care Protocols", "Communication"],
-        features: ["Practical Sessions", "Internship", "100% Placement Support"],
-        shortDesc: "Master patient communication, care handling, and electronic health records management.",
-        aboutCourse: "Focuses on patient interaction, record keeping, and healthcare documentation standards.",
-        benefits: [
-          "Master patient communication and care techniques",
-          "Learn electronic health records and documentation",
-          "Ensure compliance with healthcare standards",
-          "Build strong patient relationships and trust",
-          "Essential skills for all healthcare professionals"
+        careerOpportunities: [
+          "ICU Nurse",
+          "Emergency Nurse",
+          "Critical Care Specialist"
         ],
-        salaryPotential: "₹2.5–5 LPA"
-      },
-      {
-        title: "Medical Equipment Handling",
-        duration: "1 Month",
-        students: "200+",
-        tools: ["Medical Devices", "Safety Protocols", "Maintenance"],
-        features: ["Lab Practice", "Certification", "100% Placement Support"],
-        shortDesc: "Learn safe operation, maintenance, and troubleshooting of medical equipment.",
-        aboutCourse: "Covers usage, maintenance, and safety handling of common hospital medical devices.",
-        benefits: [
-          "Operate and maintain medical equipment safely",
-          "Understand equipment troubleshooting and protocols",
-          "Get certified in medical device handling",
-          "Enhance patient safety and care quality",
-          "Quick certification with high employment rate"
-        ],
-        salaryPotential: "₹1.8–3.5 LPA"
+        salaryPotential: "₹3.5–7 LPA",
+        gradientFrom: "#F97316",
+        gradientVia: "#EA580C",
+        gradientTo: "#C2410C",
       },
     ],
   },
