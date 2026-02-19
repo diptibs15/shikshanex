@@ -20,6 +20,12 @@ import {
   Target,
   ChevronDown,
   ChevronUp,
+  Code2,
+  Laptop,
+  Database,
+  GitBranch,
+  Cpu,
+  Package,
 } from "lucide-react";
 import { courseCategories } from "@/data/courseData";
 
@@ -34,6 +40,26 @@ type CourseData = {
   benefits?: string[];
   careerOpportunities?: string[];
   salaryPotential?: string;
+};
+
+const toolIcons: Record<string, React.ReactNode> = {
+  "Java": <Code2 className="h-4 w-4" />,
+  "Spring Boot": <Zap className="h-4 w-4" />,
+  "React": <Package className="h-4 w-4" />,
+  "MySQL": <Database className="h-4 w-4" />,
+  "REST API": <Laptop className="h-4 w-4" />,
+  "Git": <GitBranch className="h-4 w-4" />,
+  "Hibernate": <Cpu className="h-4 w-4" />,
+};
+
+const toolColors: Record<number, string> = {
+  0: "bg-purple-100 text-purple-700 border-purple-200",
+  1: "bg-blue-100 text-blue-700 border-blue-200",
+  2: "bg-green-100 text-green-700 border-green-200",
+  3: "bg-pink-100 text-pink-700 border-pink-200",
+  4: "bg-indigo-100 text-indigo-700 border-indigo-200",
+  5: "bg-cyan-100 text-cyan-700 border-cyan-200",
+  6: "bg-orange-100 text-orange-700 border-orange-200",
 };
 
 const CourseDetailPage = () => {
@@ -73,7 +99,7 @@ const CourseDetailPage = () => {
     );
   }
 
-  const syllabus = [
+  const syllabusData = [
     { title: "Module 1: Java Fundamentals", duration: "2 weeks" },
     { title: "Module 2: Spring Boot Essentials", duration: "3 weeks" },
     { title: "Module 3: Frontend with React", duration: "3 weeks" },
@@ -82,237 +108,230 @@ const CourseDetailPage = () => {
     { title: "Module 6: Live Projects", duration: "4 weeks" },
   ];
 
+  const toolsToDisplay = showAllTools ? selectedCourse.tools : selectedCourse.tools.slice(0, 5);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <main>
-        {/* Gradient Hero Section */}
-        <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent" />
-          <div className="container relative py-12 lg:py-16">
+        {/* Hero Section with Gradient Background */}
+        <section className="relative overflow-hidden py-16 lg:py-24">
+          {/* Gradient Background */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#7F00FF] via-[#5B2B8F] to-[#3F2B96]" />
+          <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_20%_50%,rgba(255,255,255,0.1),transparent_50%)]" />
+          
+          <div className="container relative">
             <button
               onClick={() => navigate(-1)}
-              className="flex items-center gap-2 text-primary hover:text-primary/80 mb-8 transition-colors"
+              className="flex items-center gap-2 text-white/80 hover:text-white mb-8 transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               Back
             </button>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left: Course Info */}
-              <div>
-                <h1 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">
+              <div className="text-white">
+                <h1 className="font-heading text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                   {selectedCourse.title}
                 </h1>
-                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                <p className="text-xl text-white/90 mb-8 leading-relaxed max-w-lg">
                   {selectedCourse.shortDesc}
                 </p>
 
                 {/* Course Stats */}
-                <div className="grid grid-cols-2 gap-4 mb-8">
+                <div className="space-y-4 mb-8">
                   <div className="flex items-center gap-3">
-                    <Star className="h-5 w-5 text-yellow-500 fill-yellow-500" />
-                    <div>
-                      <p className="text-sm font-medium text-foreground">4.8 Rating</p>
-                      <p className="text-xs text-muted-foreground">300+ Students</p>
-                    </div>
+                    <Star className="h-6 w-6 fill-yellow-400 text-yellow-400" />
+                    <span className="text-lg font-semibold">4.8 Rating • 300+ Students</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Clock className="h-5 w-5 text-primary" />
-                    <div>
-                      <p className="text-sm font-medium text-foreground">120 Hours</p>
-                      <p className="text-xs text-muted-foreground">Self-paced</p>
-                    </div>
+                    <Clock className="h-6 w-6" />
+                    <span className="text-lg font-semibold">120 Hours • 60 Lessons</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <BookOpen className="h-5 w-5 text-secondary" />
-                    <div>
-                      <p className="text-sm font-medium text-foreground">60 Lessons</p>
-                      <p className="text-xs text-muted-foreground">Video + Materials</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <BarChart3 className="h-5 w-5 text-success" />
-                    <div>
-                      <p className="text-sm font-medium text-foreground">Beginner to Advanced</p>
-                      <p className="text-xs text-muted-foreground">Progressive Learning</p>
-                    </div>
+                    <BarChart3 className="h-6 w-6" />
+                    <span className="text-lg font-semibold">Beginner to Advanced</span>
                   </div>
                 </div>
-
-                {/* CTA */}
-                <Link to="/apply">
-                  <Button size="lg" className="w-full gap-2">
-                    Enroll Now <ArrowRight className="h-4 w-4" />
-                  </Button>
-                </Link>
               </div>
 
               {/* Right: Price Card */}
-              <div className="bg-card rounded-2xl border shadow-lg p-8 h-fit sticky top-24">
-                <div className="mb-6">
-                  <div className="flex items-baseline gap-2 mb-2">
-                    <span className="text-4xl font-bold text-foreground">₹14,999</span>
-                    <span className="text-lg text-muted-foreground line-through">₹29,999</span>
+              <div className="relative h-full min-h-80">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/95 to-white/90 rounded-3xl shadow-2xl backdrop-blur-sm border border-white/20 p-8 flex flex-col justify-center">
+                  {/* Price Section */}
+                  <div className="mb-6">
+                    <div className="flex items-baseline gap-2 mb-3">
+                      <span className="text-5xl font-bold text-[#7F00FF]">₹14,999</span>
+                      <span className="text-2xl text-gray-400 line-through">₹29,999</span>
+                    </div>
+                    <Badge className="bg-green-100 text-green-700 border-green-200 text-base px-4 py-2">
+                      50% OFF
+                    </Badge>
                   </div>
-                  <Badge className="bg-success/10 text-success border-success/20">
-                    50% OFF
-                  </Badge>
-                </div>
 
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3 text-sm">
-                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span className="text-foreground">Lifetime Access</span>
+                  {/* Benefits List */}
+                  <div className="space-y-3 mb-8">
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <CheckCircle2 className="h-5 w-5 text-[#7F00FF] flex-shrink-0" />
+                      <span className="text-sm font-medium">Lifetime Access</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <CheckCircle2 className="h-5 w-5 text-[#7F00FF] flex-shrink-0" />
+                      <span className="text-sm font-medium">24/7 Doubt Support</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <CheckCircle2 className="h-5 w-5 text-[#7F00FF] flex-shrink-0" />
+                      <span className="text-sm font-medium">Certificate + Placement</span>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-3 text-sm">
-                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span className="text-foreground">24/7 Doubt Support</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-sm">
-                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span className="text-foreground">Certificate of Completion</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-sm">
-                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span className="text-foreground">Job Placement Support</span>
-                  </div>
-                </div>
 
-                <div className="mt-8 pt-6 border-t">
-                  <p className="text-xs text-muted-foreground mb-3">Salary Range:</p>
-                  <p className="text-2xl font-bold text-success">₹4–8 LPA</p>
+                  {/* CTA Button */}
+                  <Link to="/apply">
+                    <Button 
+                      size="lg" 
+                      className="w-full bg-gradient-to-r from-[#7F00FF] to-[#5B2B8F] hover:from-[#6A00E6] hover:to-[#4A1F7F] text-white text-base font-bold gap-2 shadow-lg"
+                    >
+                      Enroll Now <ArrowRight className="h-5 w-5" />
+                    </Button>
+                  </Link>
+
+                  {/* Salary */}
+                  <div className="mt-6 pt-6 border-t border-gray-200">
+                    <p className="text-xs text-gray-500 mb-2">Expected Salary Range</p>
+                    <p className="text-2xl font-bold text-green-600">₹4–8 LPA</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Course Overview */}
-        <section className="py-12">
-          <div className="container max-w-4xl">
-            <h2 className="font-heading text-3xl font-bold text-foreground mb-4">Course Overview</h2>
-            <p className="text-muted-foreground leading-relaxed">
+        {/* About Course Section */}
+        <section className="py-16 bg-gradient-to-b from-purple-50/30 to-transparent">
+          <div className="container max-w-5xl">
+            <h2 className="font-heading text-4xl font-bold text-foreground mb-6">About This Course</h2>
+            <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
               {selectedCourse.aboutCourse}
             </p>
-          </div>
-        </section>
 
-        {/* Key Highlights - Icon Grid (4 items) */}
-        <section className="py-12 bg-muted/30">
-          <div className="container max-w-4xl">
-            <h2 className="font-heading text-3xl font-bold text-foreground mb-8">What You'll Get</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-card rounded-xl border p-6">
-                <Zap className="h-8 w-8 text-primary mb-4" />
-                <h3 className="font-semibold text-foreground mb-2">Live Industry Projects</h3>
-                <p className="text-sm text-muted-foreground">
-                  Work on real-world projects similar to industry standards
-                </p>
+            {/* 4 Highlight Cards */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="bg-gradient-to-br from-blue-500/10 to-blue-500/5 border border-blue-200/30 rounded-2xl p-6 backdrop-blur-sm hover:border-blue-300/50 transition-all">
+                <Zap className="h-8 w-8 text-blue-600 mb-3" />
+                <h3 className="font-semibold text-foreground mb-2">Live Projects</h3>
+                <p className="text-sm text-muted-foreground">Real-world projects built like industry standards</p>
               </div>
-              <div className="bg-card rounded-xl border p-6">
-                <Users className="h-8 w-8 text-primary mb-4" />
-                <h3 className="font-semibold text-foreground mb-2">Internship Support</h3>
-                <p className="text-sm text-muted-foreground">
-                  Guided internship opportunities with mentorship programs
-                </p>
+              <div className="bg-gradient-to-br from-purple-500/10 to-purple-500/5 border border-purple-200/30 rounded-2xl p-6 backdrop-blur-sm hover:border-purple-300/50 transition-all">
+                <Users className="h-8 w-8 text-purple-600 mb-3" />
+                <h3 className="font-semibold text-foreground mb-2">Mentorship</h3>
+                <p className="text-sm text-muted-foreground">Guided by industry experts and professionals</p>
               </div>
-              <div className="bg-card rounded-xl border p-6">
-                <Target className="h-8 w-8 text-primary mb-4" />
-                <h3 className="font-semibold text-foreground mb-2">AI Integration Modules</h3>
-                <p className="text-sm text-muted-foreground">
-                  Learn to integrate AI features into web applications
-                </p>
+              <div className="bg-gradient-to-br from-green-500/10 to-green-500/5 border border-green-200/30 rounded-2xl p-6 backdrop-blur-sm hover:border-green-300/50 transition-all">
+                <Target className="h-8 w-8 text-green-600 mb-3" />
+                <h3 className="font-semibold text-foreground mb-2">AI Integration</h3>
+                <p className="text-sm text-muted-foreground">Learn to integrate AI features in applications</p>
               </div>
-              <div className="bg-card rounded-xl border p-6">
-                <Award className="h-8 w-8 text-primary mb-4" />
-                <h3 className="font-semibold text-foreground mb-2">100% Placement Assistance</h3>
-                <p className="text-sm text-muted-foreground">
-                  Resume building, interview prep, and job placement support
-                </p>
+              <div className="bg-gradient-to-br from-orange-500/10 to-orange-500/5 border border-orange-200/30 rounded-2xl p-6 backdrop-blur-sm hover:border-orange-300/50 transition-all">
+                <Award className="h-8 w-8 text-orange-600 mb-3" />
+                <h3 className="font-semibold text-foreground mb-2">100% Placement</h3>
+                <p className="text-sm text-muted-foreground">Resume, interview prep, and job placement</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Tools Covered */}
-        <section className="py-12">
-          <div className="container max-w-4xl">
-            <h2 className="font-heading text-3xl font-bold text-foreground mb-6">Tools & Technologies</h2>
-            <div className="flex flex-wrap gap-3">
-              {(showAllTools ? selectedCourse.tools : selectedCourse.tools.slice(0, 5)).map((tool) => (
-                <Badge key={tool} variant="secondary" className="px-4 py-2 text-sm font-medium">
+        {/* Tools Covered Section */}
+        <section className="py-16">
+          <div className="container max-w-5xl">
+            <h2 className="font-heading text-4xl font-bold text-foreground mb-8">Tools & Technologies</h2>
+            <div className="flex flex-wrap gap-3 mb-6">
+              {toolsToDisplay.map((tool, index) => (
+                <div
+                  key={tool}
+                  className={`${toolColors[index % 7]} border rounded-full px-6 py-3 font-semibold text-sm transition-all duration-300 hover:shadow-lg hover:scale-105 flex items-center gap-2`}
+                >
+                  {toolIcons[tool] || <Package className="h-4 w-4" />}
                   {tool}
-                </Badge>
+                </div>
               ))}
-              {selectedCourse.tools.length > 5 && !showAllTools && (
-                <button
-                  onClick={() => setShowAllTools(true)}
-                  className="px-4 py-2 rounded-lg border border-primary text-primary text-sm font-medium hover:bg-primary/5 transition-colors"
-                >
-                  +{selectedCourse.tools.length - 5} more
-                </button>
-              )}
-              {showAllTools && selectedCourse.tools.length > 5 && (
-                <button
-                  onClick={() => setShowAllTools(false)}
-                  className="px-4 py-2 rounded-lg border border-primary text-primary text-sm font-medium hover:bg-primary/5 transition-colors"
-                >
-                  Show Less
-                </button>
-              )}
             </div>
+
+            {/* Show More / Show Less Button */}
+            {selectedCourse.tools.length > 5 && (
+              <button
+                onClick={() => setShowAllTools(!showAllTools)}
+                className="px-6 py-3 border-2 border-primary rounded-full font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 flex items-center gap-2"
+              >
+                {showAllTools ? (
+                  <>
+                    Show Less <ChevronUp className="h-4 w-4" />
+                  </>
+                ) : (
+                  <>
+                    +{selectedCourse.tools.length - 5} More <ChevronDown className="h-4 w-4" />
+                  </>
+                )}
+              </button>
+            )}
           </div>
         </section>
 
-        {/* Career Outcomes */}
-        <section className="py-12 bg-muted/30">
-          <div className="container max-w-4xl">
-            <h2 className="font-heading text-3xl font-bold text-foreground mb-6">Career Opportunities</h2>
-            <div className="grid md:grid-cols-3 gap-4">
+        {/* Career Opportunities Section */}
+        <section className="py-16 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900">
+          <div className="container max-w-5xl">
+            <h2 className="font-heading text-4xl font-bold text-white mb-8">Career Opportunities</h2>
+            <div className="grid md:grid-cols-3 gap-6">
               {selectedCourse.careerOpportunities?.map((opportunity) => (
-                <div key={opportunity} className="bg-card rounded-xl border p-6">
-                  <Briefcase className="h-6 w-6 text-primary mb-3" />
-                  <p className="font-semibold text-foreground text-sm">{opportunity}</p>
+                <div
+                  key={opportunity}
+                  className="group bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 backdrop-blur-sm hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] cursor-pointer"
+                >
+                  <Briefcase className="h-10 w-10 text-[#7F00FF] mb-4 group-hover:scale-110 transition-transform" />
+                  <h3 className="font-semibold text-white text-lg mb-2">{opportunity}</h3>
+                  <p className="text-white/70 text-sm">Salary: {selectedCourse.salaryPotential}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Accordion Syllabus */}
-        <section className="py-12">
-          <div className="container max-w-4xl">
-            <h2 className="font-heading text-3xl font-bold text-foreground mb-6">Course Syllabus</h2>
+        {/* Syllabus - Modern Accordion */}
+        <section className="py-16">
+          <div className="container max-w-5xl">
+            <h2 className="font-heading text-4xl font-bold text-foreground mb-8">Course Syllabus</h2>
             <div className="space-y-3">
-              {syllabus.map((item, index) => (
+              {syllabusData.map((item, index) => (
                 <div
                   key={index}
-                  className="bg-card rounded-xl border overflow-hidden transition-all"
+                  className="group bg-card rounded-2xl border shadow-sm hover:shadow-lg transition-all duration-300"
                 >
                   <button
                     onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
-                    className="w-full flex items-center justify-between p-6 hover:bg-muted/50 transition-colors"
+                    className="w-full flex items-center gap-4 p-6 hover:bg-muted/30 transition-colors"
                   >
-                    <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                        <span className="text-sm font-bold text-primary">{index + 1}</span>
-                      </div>
-                      <div className="text-left">
-                        <h3 className="font-semibold text-foreground">{item.title}</h3>
-                        <p className="text-sm text-muted-foreground">{item.duration}</p>
-                      </div>
+                    {/* Gradient Circle Badge */}
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#7F00FF] to-[#5B2B8F] flex items-center justify-center flex-shrink-0">
+                      <span className="text-white font-bold text-lg">{index + 1}</span>
                     </div>
+
+                    <div className="text-left flex-grow">
+                      <h3 className="font-semibold text-foreground text-lg">{item.title}</h3>
+                      <p className="text-sm text-muted-foreground">{item.duration}</p>
+                    </div>
+
                     {expandedIndex === index ? (
-                      <ChevronUp className="h-5 w-5 text-muted-foreground" />
+                      <ChevronUp className="h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors" />
                     ) : (
-                      <ChevronDown className="h-5 w-5 text-muted-foreground" />
+                      <ChevronDown className="h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors" />
                     )}
                   </button>
+
+                  {/* Expandable Content */}
                   {expandedIndex === index && (
-                    <div className="px-6 pb-6 border-t bg-muted/20">
-                      <p className="text-sm text-muted-foreground">
-                        In-depth training on {item.title.split(":")[1]} with hands-on exercises and practical projects.
+                    <div className="px-6 pb-6 border-t bg-muted/10 animate-in fade-in slide-in-from-top-2 duration-300">
+                      <p className="text-muted-foreground">
+                        In-depth training on {item.title.split(":")[1]} with hands-on exercises, real-world projects, and industry best practices.
                       </p>
                     </div>
                   )}
@@ -323,21 +342,24 @@ const CourseDetailPage = () => {
         </section>
 
         {/* Strong CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent">
+        <section className="py-16 bg-gradient-to-r from-[#7F00FF]/10 via-[#5B2B8F]/5 to-[#3F2B96]/10">
           <div className="container max-w-4xl text-center">
-            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Ready to Master Full Stack Development with AI?
+            <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              Ready to Transform Your Career?
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Join 300+ students and transform your career with industry-ready skills
+            <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
+              Join 300+ successful students who are now working at top tech companies. Limited time 50% OFF offer!
             </p>
             <Link to="/apply">
-              <Button size="lg" className="gap-2 text-base px-8">
-                Enroll Now - ₹14,999 <ArrowRight className="h-5 w-5" />
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-[#7F00FF] to-[#5B2B8F] hover:from-[#6A00E6] hover:to-[#4A1F7F] text-white text-lg font-bold px-10 py-7 gap-2"
+              >
+                Enroll Now - ₹14,999 <ArrowRight className="h-6 w-6" />
               </Button>
             </Link>
-            <p className="text-sm text-muted-foreground mt-6">
-              Limited Time: 50% OFF on all enrollments
+            <p className="text-sm text-muted-foreground mt-8 font-medium">
+              ✓ Lifetime Access • ✓ Certificate • ✓ Job Placement • ✓ 24/7 Support
             </p>
           </div>
         </section>
