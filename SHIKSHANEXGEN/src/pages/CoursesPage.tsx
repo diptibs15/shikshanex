@@ -248,86 +248,173 @@ const CoursesPage = () => {
                       </div>
                     )}
 
-                    {/* Static Course Cards - Redesigned */}
+                    {/* Static Course Cards - Premium Design */}
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                      {category.courses.map((course) => (
-                        <div
-                          key={course.title}
-                          className="group bg-card rounded-2xl border shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300 overflow-hidden"
-                        >
-                          <div className="p-6 flex flex-col h-full">
-                            {/* Title */}
-                            <h3 className="font-heading text-lg font-semibold text-foreground mb-3 line-clamp-2">
-                              {course.title}
-                            </h3>
+                      {category.courses.map((course) => {
+                        const gradientStyle = {
+                          background: `linear-gradient(135deg, ${course.gradientFrom}15, ${course.gradientVia}10, ${course.gradientTo}15)`
+                        };
+                        const badgeStyle = {
+                          background: `linear-gradient(135deg, ${course.gradientFrom}, ${course.gradientTo})`,
+                          boxShadow: `0 4px 15px ${course.gradientFrom}30`
+                        };
+                        const iconStyle = { color: course.gradientFrom };
+                        const buttonStyle = {
+                          background: `linear-gradient(135deg, ${course.gradientFrom}, ${course.gradientTo})`,
+                          boxShadow: `0 4px 15px ${course.gradientFrom}40`
+                        };
 
-                            {/* Short Description - 2-3 lines only */}
-                            <p className="text-sm text-muted-foreground mb-6 line-clamp-3 leading-relaxed">
-                              {course.shortDesc}
-                            </p>
+                        return (
+                          <div
+                            key={course.title}
+                            className="group relative rounded-3xl overflow-hidden transition-all duration-300 hover:shadow-2xl"
+                            style={gradientStyle}
+                          >
+                            {/* Card Background */}
+                            <div className="absolute inset-0 bg-white/80 backdrop-blur-sm rounded-3xl"></div>
 
-                            {/* Key Highlights with Icons */}
-                            <div className="space-y-2 mb-6 flex-grow">
-                              <div className="flex items-center gap-2 text-sm">
-                                <Clock className="h-4 w-4 text-primary flex-shrink-0" />
-                                <span className="text-foreground font-medium">{course.duration}</span>
-                              </div>
-                              <div className="flex items-center gap-2 text-sm">
-                                <Users className="h-4 w-4 text-primary flex-shrink-0" />
-                                <span className="text-foreground font-medium">{course.students} students</span>
-                              </div>
-                              {course.salaryPotential && (
-                                <div className="flex items-center gap-2 text-sm">
-                                  <TrendingUp className="h-4 w-4 text-success flex-shrink-0" />
-                                  <span className="text-foreground font-medium">{course.salaryPotential}</span>
+                            {/* Content */}
+                            <div className="relative p-8 flex flex-col h-full">
+                              {/* Badge and Price */}
+                              <div className="flex items-start justify-between gap-4 mb-4">
+                                <div>
+                                  <h3 className="font-heading text-xl font-bold text-foreground line-clamp-2 mb-2">
+                                    {course.title}
+                                  </h3>
+                                  <p className="text-sm text-muted-foreground line-clamp-2">
+                                    {course.shortDesc}
+                                  </p>
                                 </div>
-                              )}
-                            </div>
-
-                            {/* Features as Checkmarks */}
-                            <div className="space-y-1.5 mb-6">
-                              {course.features.slice(0, 3).map((feature) => (
-                                <div key={feature} className="flex items-center gap-2 text-xs">
-                                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0" />
-                                  <span className="text-foreground font-medium">{feature}</span>
-                                </div>
-                              ))}
-                            </div>
-
-                            {/* Tools as Tags */}
-                            <div className="mb-6">
-                              <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2">Tools</p>
-                              <div className="flex flex-wrap gap-2">
-                                {course.tools.slice(0, 3).map((tool) => (
-                                  <Badge key={tool} variant="outline" className="text-xs">
-                                    {tool}
-                                  </Badge>
-                                ))}
-                                {course.tools.length > 3 && (
-                                  <Badge variant="outline" className="text-xs">
-                                    +{course.tools.length - 3}
-                                  </Badge>
+                                {course.badge && (
+                                  <div
+                                    className="px-3 py-1.5 rounded-full text-white text-xs font-bold whitespace-nowrap flex-shrink-0"
+                                    style={badgeStyle}
+                                  >
+                                    {course.badge}
+                                  </div>
                                 )}
                               </div>
-                            </div>
 
-                            {/* CTA Buttons */}
-                            <div className="flex gap-3">
-                              <button
-                                onClick={() => navigateToCourseDetail(course.title)}
-                                className="flex-1 border border-primary text-primary py-2.5 rounded-lg font-medium text-sm hover:bg-primary/5 transition-colors"
-                              >
-                                View Details
-                              </button>
-                              <Link to="/apply" className="flex-1">
-                                <button className="w-full bg-primary text-primary-foreground py-2.5 rounded-lg font-medium text-sm hover:bg-primary/90 transition-colors">
-                                  Enroll Now
+                              {/* Price Display */}
+                              <div className="mb-6">
+                                <div className="flex items-baseline gap-2">
+                                  <span className="text-3xl font-bold" style={{ color: course.gradientFrom }}>
+                                    ₹{course.price?.toLocaleString()}
+                                  </span>
+                                  {course.originalPrice && (
+                                    <span className="text-lg text-gray-400 line-through">
+                                      ₹{course.originalPrice?.toLocaleString()}
+                                    </span>
+                                  )}
+                                </div>
+                              </div>
+
+                              {/* Key Metrics with Icons */}
+                              <div className="space-y-3 mb-6 flex-grow">
+                                <div className="flex items-center gap-3">
+                                  <div
+                                    className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
+                                    style={{ background: `${course.gradientFrom}20` }}
+                                  >
+                                    <Clock className="h-5 w-5" style={iconStyle} />
+                                  </div>
+                                  <span className="text-sm font-medium text-foreground">{course.duration}</span>
+                                </div>
+
+                                <div className="flex items-center gap-3">
+                                  <div
+                                    className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
+                                    style={{ background: `${course.gradientFrom}20` }}
+                                  >
+                                    <Users className="h-5 w-5" style={iconStyle} />
+                                  </div>
+                                  <span className="text-sm font-medium text-foreground">{course.students} Students</span>
+                                </div>
+
+                                {course.hours && (
+                                  <div className="flex items-center gap-3">
+                                    <div
+                                      className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
+                                      style={{ background: `${course.gradientFrom}20` }}
+                                    >
+                                      <BookOpen className="h-5 w-5" style={iconStyle} />
+                                    </div>
+                                    <span className="text-sm font-medium text-foreground">{course.hours} Hours • {course.lessons} Lessons</span>
+                                  </div>
+                                )}
+
+                                {course.salaryPotential && (
+                                  <div className="flex items-center gap-3">
+                                    <div
+                                      className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
+                                      style={{ background: `${course.gradientFrom}20` }}
+                                    >
+                                      <TrendingUp className="h-5 w-5" style={iconStyle} />
+                                    </div>
+                                    <span className="text-sm font-medium text-foreground">{course.salaryPotential}</span>
+                                  </div>
+                                )}
+                              </div>
+
+                              {/* Features */}
+                              <div className="space-y-2 mb-6">
+                                {course.features.slice(0, 2).map((feature) => (
+                                  <div key={feature} className="flex items-center gap-2">
+                                    <CheckCircle2 className="h-4 w-4 flex-shrink-0" style={iconStyle} />
+                                    <span className="text-sm font-medium text-foreground">{feature}</span>
+                                  </div>
+                                ))}
+                              </div>
+
+                              {/* Tools as Tags */}
+                              <div className="mb-6">
+                                <div className="flex flex-wrap gap-2">
+                                  {course.tools.slice(0, 4).map((tool) => (
+                                    <span
+                                      key={tool}
+                                      className="px-3 py-1.5 text-xs font-semibold rounded-full text-white"
+                                      style={{
+                                        background: `linear-gradient(135deg, ${course.gradientFrom}, ${course.gradientTo})`,
+                                        opacity: 0.9
+                                      }}
+                                    >
+                                      {tool}
+                                    </span>
+                                  ))}
+                                  {course.tools.length > 4 && (
+                                    <span className="px-3 py-1.5 text-xs font-semibold rounded-full border-2" style={{ borderColor: course.gradientFrom, color: course.gradientFrom }}>
+                                      +{course.tools.length - 4}
+                                    </span>
+                                  )}
+                                </div>
+                              </div>
+
+                              {/* CTA Buttons */}
+                              <div className="flex gap-3">
+                                <button
+                                  onClick={() => navigateToCourseDetail(course.title)}
+                                  className="flex-1 py-3 rounded-xl font-bold text-sm transition-all duration-300 hover:opacity-80"
+                                  style={{
+                                    color: course.gradientFrom,
+                                    borderColor: course.gradientFrom,
+                                    border: '2px solid'
+                                  }}
+                                >
+                                  View Details
                                 </button>
-                              </Link>
+                                <Link to="/apply" className="flex-1">
+                                  <button
+                                    className="w-full py-3 rounded-xl font-bold text-sm text-white transition-all duration-300 hover:shadow-xl"
+                                    style={buttonStyle}
+                                  >
+                                    Enroll Now
+                                  </button>
+                                </Link>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   </TabsContent>
                 );
