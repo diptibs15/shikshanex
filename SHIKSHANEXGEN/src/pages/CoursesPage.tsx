@@ -251,9 +251,6 @@ const CoursesPage = () => {
                     {/* Static Course Cards - Premium Design */}
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                       {category.courses.map((course) => {
-                        const gradientStyle = {
-                          background: `linear-gradient(135deg, ${course.gradientFrom}15, ${course.gradientVia}10, ${course.gradientTo}15)`
-                        };
                         const badgeStyle = {
                           background: `linear-gradient(135deg, ${course.gradientFrom}, ${course.gradientTo})`,
                           boxShadow: `0 4px 15px ${course.gradientFrom}30`
@@ -267,14 +264,10 @@ const CoursesPage = () => {
                         return (
                           <div
                             key={course.title}
-                            className="group relative rounded-3xl overflow-hidden transition-all duration-300 hover:shadow-2xl"
-                            style={gradientStyle}
+                            className="group relative rounded-3xl overflow-hidden transition-all duration-300 hover:shadow-2xl bg-white border border-gray-100"
                           >
-                            {/* Card Background */}
-                            <div className="absolute inset-0 bg-white/80 backdrop-blur-sm rounded-3xl"></div>
-
                             {/* Content */}
-                            <div className="relative p-8 flex flex-col h-full">
+                            <div className="p-8 flex flex-col h-full">
                               {/* Badge and Price */}
                               <div className="flex items-start justify-between gap-4 mb-4">
                                 <div>
