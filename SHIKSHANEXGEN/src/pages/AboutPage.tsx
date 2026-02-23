@@ -150,7 +150,6 @@ const AboutPage = () => {
                 
                 <div className="mt-8 pt-6 border-t text-center">
                   <p className="text-muted-foreground">Warm regards,</p>
-                  <p className="font-heading text-xl font-bold text-foreground mt-2">Prasanth</p>
                   <p className="text-primary font-medium">Founder & Director</p>
                   <p className="text-sm text-muted-foreground">Shiksha Nex Technologies OPC Pvt Ltd</p>
                 </div>
